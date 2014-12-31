@@ -13,7 +13,7 @@ def getVersionName = { ->
     return stdout.toString().trim()
 }
 
-//version = getVersionName()
+version = getVersionName()
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
@@ -75,22 +75,4 @@ dependencies {
     compile "org.postgresql:postgresql:$postgresql"
 
     testCompile "com.h2database:h2:$h2"
-
-    // Deploy
-    runtime "com.github.jsimone:webapp-runner:7.0.34.1"
-    runtime "com.newrelic.agent.java:newrelic-agent:2.18.0"
 }
-
-task copyToLib << {
-    copy {
-        from configurations.runtime.copy().setTransitive(false)
-        into "$buildDir/libs"
-        rename { name ->
-            def artifacts = configurations.runtime.resolvedConfiguration.resolvedArtifacts
-            def artifact = artifacts.find { it.file.name == name }
-            "${artifact.name}.${artifact.extension}"
-        }
-    }
-}
-
-task stage(dependsOn: ["clean", "war", "copyToLib"])
