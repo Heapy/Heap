@@ -25,6 +25,7 @@ task wrapper(type: Wrapper) {
 ext {
     guava = "18.+"
     spring = "4.1.+"
+    commonsio = "2.4"
     slf4j = "1.7.+"
     servlets = "3.1.+"
     gson = "2.+"
@@ -45,9 +46,10 @@ repositories {
 dependencies {
     // Common
     compile "com.google.guava:guava:$guava"
-    compile "commons-io:commons-io:2.4"
+    compile "commons-io:commons-io:$commonsio"
 
-    compile "org.slf4j:slf4j-log4j12:$slf4j"
+    compile "org.slf4j:slf4j-api:$slf4j"
+    runtime "org.slf4j:slf4j-log4j12:$slf4j"
 
     providedCompile "org.jetbrains:annotations:13.0"
 
