@@ -49,7 +49,7 @@ dependencies {
     compile "commons-io:commons-io:$commonsio"
 
     compile "org.slf4j:slf4j-api:$slf4j"
-    runtime "org.slf4j:slf4j-log4j12:$slf4j"
+    compile "org.slf4j:slf4j-log4j12:$slf4j"
 
     providedCompile "org.jetbrains:annotations:13.0"
 
