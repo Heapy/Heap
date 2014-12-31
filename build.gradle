@@ -13,7 +13,7 @@ def getVersionName = { ->
     return stdout.toString().trim()
 }
 
-version = getVersionName()
+//version = getVersionName()
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
