@@ -75,4 +75,22 @@ dependencies {
     compile "org.postgresql:postgresql:$postgresql"
 
     testCompile "com.h2database:h2:$h2"
+
+    // Deploy
+    runtime "org.mortbay.jetty:jetty-runner:8.1.1.v20120215"
+    runtime "com.newrelic.agent.java:newrelic-agent:2.18.0"
 }
+
+task copyToLib << {
+    copy {
+        from configurations.runtime.copy().setTransitive(false)
+        into "$buildDir/libs"
+        rename { name ->
+            def artifacts = configurations.runtime.resolvedConfiguration.resolvedArtifacts
+            def artifact = artifacts.find { it.file.name == name }
+            "${artifact.name}.${artifact.extension}"
+        }
+    }
+}
+
+task stage(dependsOn: ["clean", "war", "copyToLib"])
