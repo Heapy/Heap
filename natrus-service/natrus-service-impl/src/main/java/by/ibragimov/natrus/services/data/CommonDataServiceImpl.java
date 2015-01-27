@@ -1,6 +1,6 @@
 package by.ibragimov.natrus.services.data;
 
-import by.ibragimov.natrus.dao.CommonDao;
+import by.ibragimov.natrus.domain.CommonDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

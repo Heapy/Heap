@@ -1,8 +1,7 @@
 dependencies {
-    compile project(":natrus-common")
+    compile project(":natrus-utils")
     compile project(":natrus-service:natrus-service-api")
-    compile project(":natrus-dao:natrus-dao-api")
-    runtime project(":natrus-dao:natrus-dao-impl")
+    compile project(":natrus-dao")
 
     compile "org.springframework:spring-context:$spring"
 

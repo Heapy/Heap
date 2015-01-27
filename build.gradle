@@ -74,7 +74,7 @@ subprojects {
         testCompile "junit:junit:$junit"
         testCompile "org.springframework:spring-test:$spring"
 
-        if (!project.name.equals("natrus-logging") && !project.name.equals("natrus-common")) {
+        if (!project.name.equals("natrus-logging") && !project.name.equals("natrus-utils")) {
             compile "org.slf4j:slf4j-api:$slf4j"
             runtime project(":natrus-logging")
         }

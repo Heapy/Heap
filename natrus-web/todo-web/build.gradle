@@ -1,7 +1,7 @@
 apply plugin: 'war'
 
 dependencies {
-    compile project(":natrus-common")
+    compile project(":natrus-utils")
     compile project(":natrus-service:natrus-service-api")
     runtime project(":natrus-service:natrus-service-impl")
 
