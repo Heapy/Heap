@@ -1,0 +1,14 @@
+apply plugin: 'war'
+
+dependencies {
+    compile project(":natrus-common")
+    compile project(":natrus-service:natrus-service-api")
+    runtime project(":natrus-service:natrus-service-impl")
+
+    compile "org.springframework:spring-core:$spring"
+
+    compile "org.springframework:spring-webmvc:$spring"
+    compile("javax.servlet:javax.servlet-api:$servlets")
+
+    compile "com.google.code.gson:gson:$gson"
+}

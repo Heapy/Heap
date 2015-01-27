@@ -1,0 +1,11 @@
+include "natrus-common"
+include "natrus-logging"
+
+
+include "natrus-dao:natrus-dao-api", "natrus-dao:natrus-dao-impl"
+include "natrus-service:natrus-service-api", "natrus-service:natrus-service-impl"
+
+include "natrus-web:bookmarks-web"
+include "natrus-web:rkeep-web"
+include "natrus-web:todo-web"
+include "natrus-web:natrus-web-common"

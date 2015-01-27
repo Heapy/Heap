@@ -1,0 +1,15 @@
+{
+  "name": "chkeeper",
+  "version": "0.1.0",
+  "homepage": "https://github.com/IRus/chkeeper",
+  "authors": [
+    "Ruslan Ibragimov <theliveperson@gmail.com>"
+  ],
+  "description": "UI for chkeeper.",
+  "license": "GNU GPLv3",
+  "private": true,
+  "dependencies": {
+      "bootstrap": "latest",
+      "angular": "latest"
+  }
+}

@@ -1,0 +1,17 @@
+dependencies {
+    compile project(":natrus-common")
+    compile project(":natrus-dao:natrus-dao-api")
+
+    ext {
+        postgresql = "9.3-1102-jdbc4"
+        h2 = "1.4.+"
+        springData="1.7.0.RELEASE"
+        hibernate="4.3.6.Final"
+    }
+
+    compile "org.springframework.data:spring-data-jpa:$springData"
+    compile "org.hibernate:hibernate-entitymanager:$hibernate"
+    compile "org.postgresql:postgresql:$postgresql"
+
+    testCompile "com.h2database:h2:$h2"
+}

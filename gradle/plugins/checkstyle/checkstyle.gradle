@@ -1,0 +1,13 @@
+apply plugin: 'checkstyle'
+
+String checkstyleLocation = "$rootProject.projectDir/gradle/plugins/checkstyle"
+
+checkstyleMain {
+    configFile = file("$checkstyleLocation/checkstyle.xml")
+    ignoreFailures = true
+}
+
+checkstyleTest {
+    configFile = file("$checkstyleLocation/checkstyle.xml")
+    ignoreFailures = true
+}

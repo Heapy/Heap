@@ -1,0 +1,5 @@
+dependencies {
+    compile project(":natrus-common")
+    compile("javax.servlet:javax.servlet-api:$servlets")
+    compile "org.slf4j:slf4j-log4j12:$slf4j"
+}

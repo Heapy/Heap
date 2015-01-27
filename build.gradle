@@ -1,21 +1,27 @@
 apply plugin: 'java'
-apply plugin: 'war'
 
 /**
  * Gets the version name from the latest Git tag.
  */
 def getVersionName = { ->
     def stdout = new ByteArrayOutputStream()
-    exec {
-        commandLine 'git', 'tag'
-        standardOutput = stdout
+    try {
+        exec {
+            commandLine 'git', 'tag'
+            standardOutput = stdout
+        }
+        return stdout.toString().trim()
+    } catch (Exception e) {
+        Log.error("Error while retrieving version from git", e);
     }
-    return stdout.toString().trim()
+    return "0.0.0"
 }
 
 version = getVersionName()
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
+
+String pluginDirectory = "$rootProject.projectDir/gradle/plugins"
 
 task wrapper(type: Wrapper) {
     gradleVersion = "2.2"
@@ -35,46 +41,66 @@ ext {
     h2 = "1.4.+"
     springData="1.7.0.RELEASE"
     hibernate="4.3.6.Final"
+
+    findbugsVersion = "3.0.+"
+    jsr305 = "2.0.+"
+
 }
 
-repositories {
-    mavenCentral()
-    mavenLocal()
-    maven { url "http://repo.springsource.org/release" }
-}
+subprojects {
+    apply plugin: "java"
 
-dependencies {
-    // Common
-    compile "com.google.guava:guava:$guava"
-    compile "commons-io:commons-io:$commonsio"
+    apply from: "$pluginDirectory/checkstyle/checkstyle.gradle"
+    apply from: "$pluginDirectory/findbugs/findbugs.gradle"
+    apply from: "$pluginDirectory/jdepend/jdepend.gradle"
 
-    compile "org.slf4j:slf4j-api:$slf4j"
-    compile "org.slf4j:slf4j-log4j12:$slf4j"
+    version = getVersionName()
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
 
-    providedCompile "org.jetbrains:annotations:13.0"
+    repositories {
+        maven { url "http://repo.springsource.org/release" }
+        mavenCentral()
+        mavenLocal()
+    }
 
-    testCompile "junit:junit:$junit"
-    testCompile "org.springframework:spring-test:$spring"
+    dependencies {
+        compile "com.google.guava:guava:$guava"
+        compile "commons-io:commons-io:$commonsio"
 
-    // Web
-    compile "org.springframework:spring-core:$spring"
+        compile "com.google.code.findbugs:jsr305:$jsr305"
+        compile "org.jetbrains:annotations:13.0"
 
-    compile "org.springframework:spring-webmvc:$spring"
-    providedCompile "javax.servlet:javax.servlet-api:$servlets"
+        testCompile "junit:junit:$junit"
+        testCompile "org.springframework:spring-test:$spring"
 
-    compile "com.google.code.gson:gson:$gson"
+        if (!project.name.equals("natrus-logging") && !project.name.equals("natrus-common")) {
+            compile "org.slf4j:slf4j-api:$slf4j"
+            runtime project(":natrus-logging")
+        }
 
-    // Service
-    compile "org.springframework:spring-context:$spring"
+        ///
 
-    compile "org.springframework.security:spring-security-web:$springSecurity"
-    compile "org.springframework.security:spring-security-core:$springSecurity"
-    compile "org.springframework.security:spring-security-config:$springSecurity"
+        // Web
+        //compile "org.springframework:spring-core:$spring"
 
-    // Dao
-    compile "org.springframework.data:spring-data-jpa:$springData"
-    compile "org.hibernate:hibernate-entitymanager:$hibernate"
-    compile "org.postgresql:postgresql:$postgresql"
+        //compile "org.springframework:spring-webmvc:$spring"
+        //providedCompile "javax.servlet:javax.servlet-api:$servlets"
 
-    testCompile "com.h2database:h2:$h2"
+        //compile "com.google.code.gson:gson:$gson"
+
+        // Service
+        //compile "org.springframework:spring-context:$spring"
+
+        //compile "org.springframework.security:spring-security-web:$springSecurity"
+        //compile "org.springframework.security:spring-security-core:$springSecurity"
+        //compile "org.springframework.security:spring-security-config:$springSecurity"
+
+        // Dao
+        //compile "org.springframework.data:spring-data-jpa:$springData"
+        //compile "org.hibernate:hibernate-entitymanager:$hibernate"
+        //compile "org.postgresql:postgresql:$postgresql"
+
+        //testCompile "com.h2database:h2:$h2"
+    }
 }

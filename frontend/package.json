@@ -1,0 +1,22 @@
+{
+  "name": "chkeeper",
+  "version": "0.1.0",
+  "author": "Ruslan Ibragimov, Gleb Albov",
+  "description": "UI for chkeeper.",
+  "license": "GNU GPLv3",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IRus/chkeeper"
+  },
+  "bugs": {
+    "url": "https://github.com/IRus/chkeeper/issues"
+  },
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "bower" : "latest",
+    "request": "^2.34.0",
+    "mime": "^1.2.11"
+  }
+}

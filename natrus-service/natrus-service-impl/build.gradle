@@ -1,0 +1,12 @@
+dependencies {
+    compile project(":natrus-common")
+    compile project(":natrus-service:natrus-service-api")
+    compile project(":natrus-dao:natrus-dao-api")
+    runtime project(":natrus-dao:natrus-dao-impl")
+
+    compile "org.springframework:spring-context:$spring"
+
+    compile "org.springframework.security:spring-security-web:$springSecurity"
+    compile "org.springframework.security:spring-security-core:$springSecurity"
+    compile "org.springframework.security:spring-security-config:$springSecurity"
+}

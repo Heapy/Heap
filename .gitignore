@@ -10,3 +10,9 @@ build
 
 # Common files
 *.log
+
+# Folder with personal temporary files
+drafts
+
+# Temporary files
+schema.sql

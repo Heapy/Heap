@@ -1,0 +1,14 @@
+apply plugin: "jdepend"
+
+jdependMain.doLast {
+    // fail build if packages cycles detected(skipping test)
+    File file = file("$jdepend.reportsDir/main.xml");
+    assert file.exists() && file.isFile(), "File '$file' must exist"
+    // skip cycles in dao because bi-directional relations
+    def cycles = new XmlSlurper().parse(file).Cycles.Package.findAll { !it.@Name.text().startsWith("by.wth.chkeeper.domain") }
+    def numberOfCycles = cycles.size()
+    def info = "";
+    cycles.each { info = info + it + "\n" }
+    assert numberOfCycles == 0, "Detected $numberOfCycles cycles. Checkout report file: $file, Cycles:\n $info"
+}
+

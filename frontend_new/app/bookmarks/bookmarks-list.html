@@ -1,0 +1,20 @@
+<table class="table">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Url</td>
+            <td>Tags</td>
+            <td>Note</td>
+        </tr>
+    </thead>
+    <tbody ng-repeat="item in bookmark.bookmarks">
+        <tr>
+            <td>{{item.id}}</td>
+            <td><a href="{{item.url}}">{{item.title}}</a></td>
+            <td>{{item.url}}</td>
+            <td><span ng-repeat="tag in item.tags"><b>{{tag.name}}</b></span></td>
+            <td><em>{{item.note}}</em></td>
+        </tr>
+    </tbody>
+</table>
