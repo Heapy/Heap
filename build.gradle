@@ -24,8 +24,8 @@ targetCompatibility = JavaVersion.VERSION_1_8
 String pluginDirectory = "$rootProject.projectDir/gradle/plugins"
 
 task wrapper(type: Wrapper) {
-    gradleVersion = "2.2"
-    distributionUrl = 'http://services.gradle.org/distributions/gradle-2.2.1-all.zip'
+    gradleVersion = "2.3"
+    distributionUrl = 'http://services.gradle.org/distributions/gradle-2.3-all.zip'
 }
 
 ext {
@@ -36,8 +36,8 @@ ext {
     servlets = "3.1.+"
     gson = "2.+"
     junit = "4.+"
-    springSecurity = "3.2.+"
-    postgresql = "9.3-1102-jdbc4"
+    springSecurity = "4.0.+"
+    postgresql = "9.4-1201-jdbc4"
     h2 = "1.4.+"
     springData="1.7.0.RELEASE"
     hibernate="4.3.6.Final"
@@ -66,7 +66,9 @@ subprojects {
 
     dependencies {
         compile "com.google.guava:guava:$guava"
+        compile "org.apache.commons:commons-lang3:3.4"
         compile "commons-io:commons-io:$commonsio"
+        compile "com.google.code.gson:gson:$gson"
 
         compile "com.google.code.findbugs:jsr305:$jsr305"
         compile "org.jetbrains:annotations:13.0"
@@ -74,9 +76,9 @@ subprojects {
         testCompile "junit:junit:$junit"
         testCompile "org.springframework:spring-test:$spring"
 
-        if (!project.name.equals("natrus-logging") && !project.name.equals("natrus-utils")) {
+        if (!project.name.equals("heap-logging") && !project.name.equals("heap-utils")) {
             compile "org.slf4j:slf4j-api:$slf4j"
-            runtime project(":natrus-logging")
+            runtime project(":heap-logging")
         }
 
         ///
@@ -86,8 +88,6 @@ subprojects {
 
         //compile "org.springframework:spring-webmvc:$spring"
         //providedCompile "javax.servlet:javax.servlet-api:$servlets"
-
-        //compile "com.google.code.gson:gson:$gson"
 
         // Service
         //compile "org.springframework:spring-context:$spring"

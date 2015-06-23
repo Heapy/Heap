@@ -1,0 +1,14 @@
+dependencies {
+    compile project(":heap-dao")
+
+    compile "org.springframework:spring-context:$spring"
+    compile "org.springframework.security:spring-security-web:$springSecurity"
+    compile "org.springframework.security:spring-security-core:$springSecurity"
+    compile "org.springframework.security:spring-security-config:$springSecurity"
+
+    compile "org.springframework.security:spring-security-jwt:1.0.3.RELEASE"
+
+    compile "com.fasterxml.jackson.core:jackson-databind:2.5.3"
+
+    compile "javax.servlet:javax.servlet-api:$servlets"
+}

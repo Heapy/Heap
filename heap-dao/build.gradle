@@ -1,0 +1,13 @@
+dependencies {
+    compile project(":heap-utils")
+    compile project(":heap-dao")
+
+    compile "org.javamoney:moneta:1.0-RC1" // JSR 354 RI
+
+    compile "org.springframework.data:spring-data-jpa:$springData"
+    compile "org.hibernate:hibernate-entitymanager:$hibernate"
+    compile "org.postgresql:postgresql:$postgresql"
+    compile "com.h2database:h2:$h2"
+
+    testCompile project(":heap-test")
+}

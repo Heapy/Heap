@@ -1,10 +1,9 @@
-include "natrus-utils"
-include "natrus-logging"
-include "natrus-dao"
+include "heap-security"
+include "heap-utils"
+include "heap-logging"
+include "heap-dao"
+include "heap-web"
+include "heap-test"
 
-include "natrus-service:natrus-service-api", "natrus-service:natrus-service-impl"
+include "heap-service:heap-service-api", "heap-service:heap-service-impl"
 
-include "natrus-web:bookmarks-web"
-include "natrus-web:rkeep-web"
-include "natrus-web:todo-web"
-include "natrus-web:natrus-web-common"

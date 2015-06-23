@@ -1,0 +1,2 @@
+webpackJsonp([1],[,function(t,e,n){function o(t){this.element=document.getElementById(t)}o.prototype.fat=function(){this.element.style.fontWeight="bold"},t.exports=o}]);
+//# sourceMappingURL=60648b124727ccb400611.bundle.js.map

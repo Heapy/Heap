@@ -16,3 +16,8 @@ drafts
 
 # Temporary files
 schema.sql
+
+frontend/node_modules
+frontend/bower_components
+frontend/dist
+frontend-webpack/node_modules

@@ -1,5 +1,3 @@
 (function() {
-
-    var app = angular.module("chkeeper", []);
-
+    var app = angular.module("natrus", ["natrus.bookmarks"]);
 })();
