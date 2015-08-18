@@ -1,3 +1,17 @@
+HEAP
+====
+
+Ideas: 
+* https://en.wikipedia.org/wiki/FriendFeed
+* https://www.jetbrains.com/omea/
+* TL;DR;
+* http://citydog.by/post/money/
+* Payscale (Анализатор зарплат)
+* Rewire (выработка привычек)
+* YaCy, delicious, instapaper, diigo, pinboard.in. Или вот еще — fetching.io, bookmarks.io, historio.us
+  
+
+
 Stack ToDo
 ==========
 
@@ -46,3 +60,5 @@ Environment setup
 Build status
 ------------
 [![build status](https://travis-ci.org/IRus/JBookmarks.svg)](https://travis-ci.org/IRus/JBookmarks)
+
+
