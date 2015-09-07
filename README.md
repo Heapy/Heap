@@ -2,13 +2,35 @@ HEAP
 ====
 
 Ideas: 
+* Stack ToDo - Just stack of activities
 * https://en.wikipedia.org/wiki/FriendFeed
 * https://www.jetbrains.com/omea/
-* TL;DR;
+* TL;DR; (RSS Reader \w Friends, Recomendation, Deduplication and more and more)
 * http://citydog.by/post/money/
 * Payscale (Анализатор зарплат)
 * Rewire (выработка привычек)
-* YaCy, delicious, instapaper, diigo, pinboard.in. Или вот еще — fetching.io, bookmarks.io, historio.us
+* * YaCy, 
+  * delicious 
+  * instapaper
+  * diigo
+  * pinboard.in 
+  * fetching.io 
+  * bookmarks.io
+  * historio.us
+  * raindrop.io
+  * www.zotero.org
+* View Readed books, film, and so on
+* RSS: RSS + User Friendly Interface + Popular sites modules
+  Социализация RSS читалки:
+  - публичное выставление фидов
+  - добавление тэгов к фидам
+  - лайки
+  - комментирование прямо в приложении
+  - рекомендации
+  - модули для чтения лент из соцсетей
+  - модули для чтения форумов на популярных движках
+  
+
   
 
 
