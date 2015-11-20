@@ -1,13 +1,22 @@
 HEAP
 ====
 
+Subprojects includes:
+* Stack ToDo
+* Event Project
+* Bookmarks
+* RSS Reader
+* TL-DR
+* Receipt Keeper
+
+
 Ideas: 
 * Stack ToDo - Just stack of activities
 * https://en.wikipedia.org/wiki/FriendFeed
 * https://www.jetbrains.com/omea/
 * TL;DR; (RSS Reader \w Friends, Recomendation, Deduplication and more and more)
 * http://citydog.by/post/money/
-* Payscale (Анализатор зарплат)
+* PayscaleK(Анализатор зарплат)
 * Rewire (выработка привычек)
 * * YaCy, 
   * delicious 
@@ -31,34 +40,22 @@ Ideas:
   - модули для чтения форумов на популярных движках
   
 
-  
+Events
+======
 
+Export to Google Calendar:
+https://console.developers.google.com/project/project-open-calendar/apiui/credential?pli=1
+http://stackoverflow.com/questions/20076618/how-to-access-google-calendar-rest-api-v3-with-java
+https://developers.google.com/google-apps/calendar/
+https://developers.google.com/google-apps/calendar/v3/reference/#Freebusy
+  
 
 Stack ToDo
 ==========
 
+Выбор текущей задачи о подсчет времени потраченного на её реализацию. Переключения между задачами с автоматическим изменением счетчика времени
 Web implementation of Stack ToDo Bash script.
 
-
-# TODO:
-
-Objectives
-----------
-
-JBookmarks - should be useful and simple, and solve following problems:
-
-* Good accessibility and user experience
-* Store bookmarks safely
-* Simple search of bookmarks
-* Easy to add new bookmarks
-* The ability to share bookmarks with anyone
-
-Environment setup
------------------
-
-Build status
-------------
-[![build status](https://travis-ci.org/IRus/JBookmarks.svg)](https://travis-ci.org/IRus/JBookmarks)
 
 JBookmarks
 ==========
@@ -75,12 +72,3 @@ JBookmarks - should be useful and simple, and solve following problems:
 * Simple search of bookmarks
 * Easy to add new bookmarks
 * The ability to share bookmarks with anyone
-
-Environment setup
------------------
-
-Build status
-------------
-[![build status](https://travis-ci.org/IRus/JBookmarks.svg)](https://travis-ci.org/IRus/JBookmarks)
-
-
