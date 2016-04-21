@@ -1,6 +1,0 @@
-<FindBugsFilter>
-    <!--<Match>
-        test packages
-        <Package name="x.x.x.x.x.x.*"/>
-    </Match>-->
-</FindBugsFilter>

@@ -1,31 +1,13 @@
-apply plugin: 'java'
+buildscript {
+    ext.kotlin_version = '1.0.1-2'
 
-/**
- * Gets the version name from the latest Git tag.
- */
-def getVersionName = { ->
-    def stdout = new ByteArrayOutputStream()
-    try {
-        exec {
-            commandLine 'git', 'tag'
-            standardOutput = stdout
-        }
-        return stdout.toString().trim()
-    } catch (Exception e) {
-        Log.error("Error while retrieving version from git", e);
+    repositories {
+        jcenter()
     }
-    return "0.0.0"
-}
 
-version = getVersionName()
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = JavaVersion.VERSION_1_8
-
-String pluginDirectory = "$rootProject.projectDir/gradle/plugins"
-
-task wrapper(type: Wrapper) {
-    gradleVersion = "2.3"
-    distributionUrl = 'http://services.gradle.org/distributions/gradle-2.3-all.zip'
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
 }
 
 ext {
@@ -48,23 +30,16 @@ ext {
 }
 
 subprojects {
-    apply plugin: "java"
-
-    apply from: "$pluginDirectory/checkstyle/checkstyle.gradle"
-    apply from: "$pluginDirectory/findbugs/findbugs.gradle"
-    apply from: "$pluginDirectory/jdepend/jdepend.gradle"
-
-    version = getVersionName()
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
-
     repositories {
-        maven { url "http://repo.springsource.org/release" }
-        mavenCentral()
-        mavenLocal()
+        jcenter()
     }
 
+    apply plugin: 'kotlin'
+
     dependencies {
+        compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+
         compile "com.google.guava:guava:$guava"
         compile "org.apache.commons:commons-lang3:3.4"
         compile "commons-io:commons-io:$commonsio"
@@ -103,4 +78,9 @@ subprojects {
 
         //testCompile "com.h2database:h2:$h2"
     }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = "2.12"
+    distributionUrl = "http://services.gradle.org/distributions/gradle-${gradleVersion}-all.zip"
 }
