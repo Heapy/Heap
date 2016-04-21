@@ -1,12 +1,14 @@
 buildscript {
     ext.kotlin_version = '1.0.1-2'
+    ext.spring_version = '1.3.3.RELEASE'
 
     repositories {
         jcenter()
     }
 
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlin_version}")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${spring_version}")
     }
 }
 
@@ -16,9 +18,11 @@ subprojects {
     }
 
     apply plugin: 'kotlin'
+    apply plugin: 'spring-boot'
 
     dependencies {
-        compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+        compile("org.jetbrains.kotlin:kotlin-stdlib:${kotlin_version}")
+        compile("org.springframework.boot:spring-boot-starter-test")
     }
 }
 

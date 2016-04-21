@@ -1,7 +1,7 @@
+
 dependencies {
-    compile project(":heap-utils")
-    compile project(":heap-dao")
-    compile project(":heap-security")
-    compile project(":heap-service:heap-service-api")
-    runtime project(":heap-service:heap-service-impl")
+    compile("org.springframework.boot:spring-boot-starter-web") {
+        exclude module: "spring-boot-starter-tomcat"
+    }
+    compile("org.springframework.boot:spring-boot-starter-undertow")
 }

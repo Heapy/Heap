@@ -1,6 +1,2 @@
 dependencies {
-    compile project(":heap-utils")
-    compile project(":heap-dao")
-
-    testCompile project(":heap-test")
 }
