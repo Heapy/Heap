@@ -1,2 +1,4 @@
 dependencies {
+    compile("org.flywaydb:flyway-core")
+    runtime("com.h2database:h2")
 }
