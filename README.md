@@ -1,6 +1,10 @@
 HEAP
 ====
 
+## Generating classes from database
+
+see Generator.java in heap-dao
+
 Subprojects includes:
 * Stack ToDo
 * Event Project

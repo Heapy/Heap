@@ -1,4 +1,8 @@
 dependencies {
+    compile("org.springframework.boot:spring-boot-starter-jooq")
     compile("org.flywaydb:flyway-core")
+    compile("org.jooq:jooq-meta")
+    compile("org.jooq:jooq-codegen")
+    runtime("org.postgresql:postgresql")
     runtime("com.h2database:h2")
 }
