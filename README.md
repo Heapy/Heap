@@ -42,6 +42,7 @@ Ideas:
   - рекомендации
   - модули для чтения лент из соцсетей
   - модули для чтения форумов на популярных движках
+* nomadic identity https://project.hubzilla.org/wiki/hubzilla/Hubzilla%2BProject/Home (see diaspora for their identity alg)  
   
 
 Events
