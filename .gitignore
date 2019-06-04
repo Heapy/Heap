@@ -1,23 +1,14 @@
-# Idea configs
-.idea
+# Intellij Idea
+/.idea/
+out/
 *.iml
 *.iws
 *.ipr
 
-# Gradle specific files
-.gradle
-build
+# Gradle
+/.gradle/
+build/
 
-# Common files
-*.log
-
-# Folder with personal temporary files
-drafts
-
-# Temporary files
-schema.sql
-
-frontend/node_modules
-frontend/bower_components
-frontend/dist
-frontend-webpack/node_modules
+# Node.js
+/heap-frontend/node_modules/
+/heap/frontend/src/main/resources/static/
