@@ -1,5 +1,0 @@
-dependencies {
-    compile project(":heap-utils")
-    compile project(":heap-service:heap-service-api")
-    compile project(":heap-dao")
-}

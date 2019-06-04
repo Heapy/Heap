@@ -1,9 +1,0 @@
-include "heap-security"
-include "heap-utils"
-include "heap-logging"
-include "heap-dao"
-include "heap-web"
-include "heap-test"
-
-include "heap-service:heap-service-api", "heap-service:heap-service-impl"
-

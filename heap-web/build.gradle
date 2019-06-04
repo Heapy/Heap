@@ -1,8 +1,0 @@
-dependencies {
-    compile("org.springframework.boot:spring-boot-starter-web") {
-        exclude module: "spring-boot-starter-tomcat"
-    }
-    compile("org.springframework.boot:spring-boot-starter-undertow")
-
-    compile project(":heap-dao")
-}
