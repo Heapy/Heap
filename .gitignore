@@ -6,5 +6,5 @@ out/
 *.ipr
 
 # Gradle
-/.gradle/
+.gradle
 build/
