@@ -1,6 +1,0 @@
-spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/heap
-    username: postgres
-    password: xByFyWQwilF6BOa
-    driver-class-name: org.postgresql.Driver

@@ -3,6 +3,7 @@ object Dep {
 
     object Kotlin {
         const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
+        const val stdlibJs = "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlinVersion"
         const val reflect = "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
         const val scriptUtil = "org.jetbrains.kotlin:kotlin-script-util:$kotlinVersion"
         const val scriptingCompiler = "org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:$kotlinVersion"
@@ -12,6 +13,7 @@ object Dep {
     object Ktor {
         private const val version = "1.2.1"
         const val server = "io.ktor:ktor-server-netty:$version"
+        const val serverTest = "io.ktor:ktor-server-test-host:$version"
         const val jackson = "io.ktor:ktor-jackson:$version"
     }
 
@@ -44,9 +46,11 @@ object Dep {
     val sitemap = "com.github.dfabulich:sitemapgen4j:1.1.2"
     val jbcrypt = "org.mindrot:jbcrypt:0.4"
 
-    val commonmark = "com.atlassian.commonmark:commonmark:0.12.1"
+    const val commonmark = "com.atlassian.commonmark:commonmark:0.12.1"
 
-    val commonsEmail = "org.apache.commons:commons-email:1.5"
+    const val commonsEmail = "org.apache.commons:commons-email:1.5"
+
+    const val config4k = "io.github.config4k:config4k:0.4.1"
 
     private val micrometerVersion = "1.1.4"
     val micrometer = "io.micrometer:micrometer-core:$micrometerVersion"
@@ -57,5 +61,6 @@ object Dep {
     const val sentry = "io.sentry:sentry-logback:1.7.22"
 
     val mockk = "io.mockk:mockk:1.9.3"
-    val junit = "org.junit.jupiter:junit-jupiter-engine:5.4.2"
+    val junitApi = "org.junit.jupiter:junit-jupiter-api:5.4.2"
+    val junitEngine = "org.junit.jupiter:junit-jupiter-engine:5.4.2"
 }

@@ -1,10 +1,6 @@
 HEAP
 ====
 
-## Generating classes from database
-
-see Generator.java in heap-dao
-
 Subprojects includes:
 * Stack ToDo
 * Event Project
@@ -12,7 +8,6 @@ Subprojects includes:
 * RSS Reader
 * TL-DR
 * Receipt Keeper
-
 
 Ideas: 
 * Stack ToDo - Just stack of activities
@@ -77,3 +72,24 @@ JBookmarks - should be useful and simple, and solve following problems:
 * Simple search of bookmarks
 * Easy to add new bookmarks
 * The ability to share bookmarks with anyone
+
+https://github.com/DIYgod/RSSHub
+
+Events
+------
+Делать "дайджесты" по нескольких источникам, показывая новые посты только раз в X времени. Т.е. например насобирать все посты из какого-то сайта или социальной сети и показать их раз в месяц. Обновление происходит регулярно, а показ с определенной частотой/в определенное время.
+
+
+Heap: эстимейты для тасок, Тодо лист, как и любой Стрим должен поддерживать время выполнения. Например для видео оно считается автоматически****
+
+
+### Subscriptions (per year)
+
+G Suite Basic - 40EUR
+Episodes Calendar  - 12EUR
+DigitalOcean - 5USD * 12
+Apple (8.99+3.49)USD * 12
+Microsoft - 339RUB * 12
+---------------------------
+286.37 EUR/Year
+

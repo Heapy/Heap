@@ -8,7 +8,3 @@ out/
 # Gradle
 /.gradle/
 build/
-
-# Node.js
-/heap-frontend/node_modules/
-/heap/frontend/src/main/resources/static/
