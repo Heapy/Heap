@@ -1,4 +1,4 @@
-Komodo-CRM [![Build Status](https://travis-ci.com/Heapy/Komodo-CRM.svg?branch=secret-branch)](https://travis-ci.com/Heapy/Komodo-CRM)
+Komodo-CRM [![Build Status](https://travis-ci.com/Heapy/Komodo-CRM.svg?branch=main)](https://travis-ci.com/Heapy/Komodo-CRM)
 ====
 
 Subprojects includes:
