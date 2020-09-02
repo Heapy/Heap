@@ -1,14 +1,10 @@
-object Dep {
-    const val kotlinVersion = "1.3.31"
+private const val kotlinVersion = "1.4.0"
 
-    object Kotlin {
-        const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
-        const val stdlibJs = "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlinVersion"
-        const val reflect = "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
-        const val scriptUtil = "org.jetbrains.kotlin:kotlin-script-util:$kotlinVersion"
-        const val scriptingCompiler = "org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:$kotlinVersion"
-        const val compiler = "org.jetbrains.kotlin:kotlin-compiler-embeddable:$kotlinVersion"
-    }
+object Dep {
+    const val kotlinStdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
+    const val kotlinReflect = "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
+
+    val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.3.9"
 
     object Ktor {
         private const val version = "1.2.1"
@@ -24,8 +20,6 @@ object Dep {
     val jackson = "com.fasterxml.jackson.core:jackson-databind:$jacksonVersion"
     val jacksonJsr310 = "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:$jacksonVersion"
     val jacksonKotlin = "com.fasterxml.jackson.module:jackson-module-kotlin:$jacksonVersion"
-
-    val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.2.1"
 
     val httpClient = "org.apache.httpcomponents:httpasyncclient:4.1.4"
     val undertow = "io.undertow:undertow-core:2.0.20.Final"
@@ -61,6 +55,6 @@ object Dep {
     const val sentry = "io.sentry:sentry-logback:1.7.22"
 
     val mockk = "io.mockk:mockk:1.9.3"
-    val junitApi = "org.junit.jupiter:junit-jupiter-api:5.4.2"
-    val junitEngine = "org.junit.jupiter:junit-jupiter-engine:5.4.2"
+    val jupiterApi = "org.junit.jupiter:junit-jupiter-api:5.4.2"
+    val jupiterEngine = "org.junit.jupiter:junit-jupiter-engine:5.4.2"
 }
