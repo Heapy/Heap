@@ -14,13 +14,16 @@ class KomodoCRMModulePlugin : Plugin<Project> {
         pluginManager.apply("org.jetbrains.kotlin.jvm")
 
         repositories {
-            jcenter()
+            mavenCentral()
+            maven {
+                url = uri("https://repo.kotlin.link")
+            }
         }
 
         dependencies {
-            add("implementation", Dep.kotlinStdlib)
-            add("implementation", Dep.kotlinReflect)
-            add("implementation", Dep.coroutines)
+            add("implementation", kotlinStdlib)
+            add("implementation", kotlinReflect)
+            add("implementation", coroutines)
         }
 
         config()
@@ -28,12 +31,14 @@ class KomodoCRMModulePlugin : Plugin<Project> {
     }
 
     private fun Project.config() {
-        // Make sure that java's jvm target version is 8
         val bytecodeVersion = JavaVersion.VERSION_11
 
-        tasks.withType<KotlinCompile> {
+        tasks.withType<KotlinCompile>().configureEach {
             kotlinOptions {
                 jvmTarget = bytecodeVersion.toString()
+                languageVersion = "1.5"
+                apiVersion = "1.5"
+                useIR = true
             }
         }
 
@@ -44,14 +49,14 @@ class KomodoCRMModulePlugin : Plugin<Project> {
     }
 
     private fun Project.test() {
-        tasks.withType<Test> {
+        tasks.withType<Test>().configureEach {
             useJUnitPlatform()
         }
 
         dependencies {
-            add("testImplementation", Dep.mockk)
-            add("testImplementation", Dep.jupiterApi)
-            add("testRuntimeOnly", Dep.jupiterEngine)
+            add("testImplementation", mockk)
+            add("testImplementation", jupiterApi)
+            add("testRuntimeOnly", jupiterEngine)
         }
     }
 }
