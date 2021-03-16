@@ -1,5 +1,6 @@
 package io.heapy.crm.komodo
 
+import com.typesafe.config.Config
 import com.typesafe.config.ConfigFactory
 import io.github.config4k.extract
 import io.undertow.Undertow
@@ -12,8 +13,12 @@ fun main() {
 }
 
 open class ApplicationFactory {
-    open val configuration: Configuration by lazy {
-        ConfigFactory.load().extract()
+    open val configuration: Config by lazy {
+        ConfigFactory.load()
+    }
+
+    open val undertowConfiguration: UndertowConfiguration by lazy {
+        configuration.extract("undertow")
     }
 
     open val rootHandler: HttpHandler by lazy {
@@ -26,8 +31,8 @@ open class ApplicationFactory {
         Undertow
             .builder()
             .addHttpListener(
-                configuration.undertow.port,
-                configuration.undertow.host,
+                undertowConfiguration.port,
+                undertowConfiguration.host,
                 rootHandler
             )
             .build()
@@ -47,10 +52,6 @@ open class ApplicationFactory {
         val LOGGER = LoggerFactory.getLogger(ApplicationFactory::class.java)
     }
 }
-
-data class Configuration(
-    val undertow: UndertowConfiguration,
-)
 
 data class UndertowConfiguration(
     val port: Int,
