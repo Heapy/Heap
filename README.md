@@ -1,18 +1,18 @@
-# Komodo-CRM [![Build Status](https://travis-ci.com/Heapy/Komodo-CRM.svg?branch=main)](https://travis-ci.com/Heapy/Komodo-CRM)
+# Komodo-CRM [![Build](https://github.com/Heapy/Komodo-CRM/actions/workflows/build.yml/badge.svg)](https://github.com/Heapy/Komodo-CRM/actions/workflows/build.yml)
 
 ## Project goals
 
 - Help to collect information in single place and connect it;
-- Prioritize tasks (task can be anything, from learning and coding to resting and playing games);
-- Help to focus by removing multiple sources of distraction, and consolidate it in single system that care about user, not profit.
+- Prioritize and schedule tasks (task can be anything, from learning and coding to resting and playing games);
+- Help to focus by removing multiple sources of distraction, and consolidate them in single system that care about user, not profit.
 
 ## Features
 
 * [Local-first](https://www.inkandswitch.com/local-first.html)
 * Bookmarks
   - Firefox extension
-    - Add bookmarks directly to system
-    - Suggest urls from system
+    - Add bookmarks directly to the system
+    - Suggest urls from the system
     - Save all visited pages and content automatically
       - Example: [fetching.io](http://fetching.io/)
   - Example projects
@@ -35,7 +35,7 @@
 * Contacts
   - CardDAV
   - Firefox extension
-    - Suggestions for **to** field in fastmail
+    - Suggestions for **to** field in fastmail/gmail/etc
   - Add birthdays to Unified Stream
 * Calendar
   - Put anything as event to calendar
@@ -43,7 +43,7 @@
   - Export to other systems (Google Calendar, Fastmail, Apple Calendar, etc)
   - Event types:
     - Notification - don't forget to do smth at particular time
-    - Event - you'll what cinema for 2 hours at that location
+    - Event - you'll watch cinema for 2 hours at that location
       - Add "Travel time"
 * Tasks
   - Create tasks in Web UI, telegram bot, PWA
@@ -54,11 +54,12 @@
       - Usually represent as number of green/red circles
 * File store
   - Store and preview files
+  - Edit files (distant future)
 * Project/Topic
   - Attach different entities to project/topic
   - View and edit them in single place
     - Sort by type
-      - Allow to arrange types
+      - Allow arranging types
     - Sort by date
 * Expense tracker (Receipt Keeper)
   - Connect with a phone through ifttt (SMS)
@@ -98,13 +99,15 @@
 * Monthly/Yearly reports on read/listen/view, finished tasks, popular topics, etc
 * **Unified Stream** - Core concept
   - All entities displayed in single stream of events
-  - Mark important/not important accounts (id)
+  - Mark important/not important accounts (twitter, instagram, youtube, etc) (id)
   - Batch all not important account updates once per day/week/month
   - Mark garbage events, add score to event (ML), filter garbage
-    - User can update score
+    - User can update automatically assigned score
   - Estimate Unified Stream Event processing time (cost)
     - Video, Podcast, etc - exact time
     - Article - approximation of character count
+    - Event - time + travel time
+    - Task - user task estimate
   - Estimate and show total processing time of current queue
     - Use score to drop unimportant, but costly events
       - Create separate stream of **drop** events to process in free-time
