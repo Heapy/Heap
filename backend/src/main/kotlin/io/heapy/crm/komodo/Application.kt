@@ -5,6 +5,7 @@ import com.typesafe.config.ConfigFactory
 import io.github.config4k.extract
 import io.undertow.Undertow
 import io.undertow.server.HttpHandler
+import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import java.lang.management.ManagementFactory
 
@@ -49,7 +50,7 @@ open class ApplicationFactory {
     }
 
     companion object {
-        val LOGGER = LoggerFactory.getLogger(ApplicationFactory::class.java)
+        val LOGGER: Logger = LoggerFactory.getLogger(ApplicationFactory::class.java)
     }
 }
 
