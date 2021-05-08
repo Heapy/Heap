@@ -1,3 +1,4 @@
+@file:JvmName("Application")
 package io.heapy.crm.komodo
 
 import com.typesafe.config.Config
