@@ -28,12 +28,19 @@ const val jjwt = "io.jsonwebtoken:jjwt-api:$jjwtVersion"
 const val jjwtImpl = "io.jsonwebtoken:jjwt-impl:$jjwtVersion"
 const val jjwtJackson = "io.jsonwebtoken:jjwt-jackson:$jjwtVersion"
 
-const val postgres = "org.postgresql:postgresql:42.2.4"
-
 const val freemarker = "org.freemarker:freemarker:2.3.28"
 const val rome = "com.rometools:rome:1.11.0"
 const val sitemap = "com.github.dfabulich:sitemapgen4j:1.1.2"
 const val jbcrypt = "org.mindrot:jbcrypt:0.4"
+
+const val postgresql = "org.postgresql:postgresql:42.2.20"
+const val hikari = "com.zaxxer:HikariCP:4.0.3"
+const val flyway = "org.flywaydb:flyway-core:7.8.2"
+
+private const val jooqVersion = "3.14.9"
+const val jooq = "org.jooq:jooq:$jooqVersion"
+const val jooqMeta = "org.jooq:jooq-meta:$jooqVersion"
+const val jooqCodegen = "org.jooq:jooq-codegen:$jooqVersion"
 
 private const val micrometerVersion = "1.1.4"
 const val micrometer = "io.micrometer:micrometer-core:$micrometerVersion"

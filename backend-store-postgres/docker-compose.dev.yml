@@ -1,0 +1,19 @@
+# docker-compose -f docker-compose.dev.yml up -d
+version: "2.4"
+services:
+  komodo_crm_database:
+    image: postgres:13.3
+    container_name: komodo_crm_database
+    restart: always
+    mem_limit: 128m
+    memswap_limit: 0m
+    environment:
+      POSTGRES_PASSWORD: "komodo"
+      POSTGRES_USER: "komodo"
+      POSTGRES_DB: "komodo_crm"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "127.0.0.1:9557:5432"
+volumes:
+  pgdata:
