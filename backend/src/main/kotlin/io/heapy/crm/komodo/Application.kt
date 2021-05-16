@@ -4,11 +4,22 @@ package io.heapy.crm.komodo
 import com.typesafe.config.Config
 import com.typesafe.config.ConfigFactory
 import io.github.config4k.extract
+import io.undertow.Handlers.websocket
 import io.undertow.Undertow
 import io.undertow.server.HttpHandler
+import io.undertow.server.handlers.PathHandler
+import io.undertow.server.handlers.resource.PathResourceManager
+import io.undertow.server.handlers.resource.ResourceHandler
+import io.undertow.websockets.core.*
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.isActive
+import kotlinx.coroutines.launch
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import java.lang.management.ManagementFactory
+import java.nio.file.Path
+
 
 fun main() {
     ApplicationFactory().run()
@@ -24,9 +35,49 @@ open class ApplicationFactory {
     }
 
     open val rootHandler: HttpHandler by lazy {
-        HttpHandler {
-            it.responseSender.send("Hello, World!")
-        }
+        PathHandler()
+            .addExactPath("/ws", websocket { exchange, channel ->
+                GlobalScope.launch {
+                    while (isActive) {
+                        delay(500000)
+                        channel.peerConnections.forEach {
+                            WebSockets.sendText(
+                                "reload", it,
+                                object : WebSocketCallback<Void> {
+                                    override fun complete(channel: WebSocketChannel?, context: Void?) {
+                                        println("ok")
+                                    }
+
+                                    override fun onError(
+                                        channel: WebSocketChannel?,
+                                        context: Void?,
+                                        throwable: Throwable?
+                                    ) {
+                                        println("error")
+                                    }
+                                },
+                            )
+                        }
+                    }
+                }
+
+                channel.receiveSetter.set(object : AbstractReceiveListener() {
+                    override fun onFullTextMessage(channel: WebSocketChannel, message: BufferedTextMessage) {
+                        val messageData = message.data
+                        for (session in channel.peerConnections) {
+                            WebSockets.sendText(messageData, session, null)
+                        }
+                    }
+                })
+                channel.resumeReceives()
+            })
+    }
+
+    open val resourcesHandler by lazy {
+        ResourceHandler(
+            PathResourceManager(undertowConfiguration.resources),
+            rootHandler
+        )
     }
 
     open val server: Undertow by lazy {
@@ -35,7 +86,7 @@ open class ApplicationFactory {
             .addHttpListener(
                 undertowConfiguration.port,
                 undertowConfiguration.host,
-                rootHandler
+                resourcesHandler
             )
             .build()
     }
@@ -58,4 +109,5 @@ open class ApplicationFactory {
 data class UndertowConfiguration(
     val port: Int,
     val host: String,
+    val resources: Path,
 )

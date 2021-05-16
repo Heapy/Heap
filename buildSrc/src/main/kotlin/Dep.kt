@@ -14,7 +14,10 @@ const val slf4jApi = "org.slf4j:slf4j-api:1.7.30"
 
 const val commonmark = "org.commonmark:commonmark:0.17.1"
 const val config4k = "io.github.config4k:config4k:0.4.2"
-const val undertow = "io.undertow:undertow-core:2.2.5.Final"
+
+private const val undertowVersion = "2.2.7.Final"
+const val undertow = "io.undertow:undertow-core:$undertowVersion"
+const val undertowWebsocket = "io.undertow:undertow-websockets-jsr:$undertowVersion"
 
 private const val jacksonVersion = "2.12.2"
 const val jackson = "com.fasterxml.jackson.core:jackson-databind:$jacksonVersion"

@@ -11,6 +11,7 @@ application {
 dependencies {
     implementation(project(":backend-store-xodus"))
     implementation(undertow)
+    implementation(undertowWebsocket)
     implementation(config4k)
     implementation(slf4jApi)
     implementation(logback)

@@ -1,6 +1,7 @@
 const path = require("path");
 const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = function (options = {}) {
   // Settings
@@ -49,8 +50,11 @@ Build started with following configuration:
         test: /\.s[ac]ss$/,
         use: [
           MiniCssExtractPlugin.loader,
-          {loader: "style-loader"},
-          {loader: "css-loader"},
+          {loader: "css-loader", options: {
+            modules: {
+              localIdentName: "[path][name]__[local]--[hash:base64:5]"
+            }
+          }},
           {loader: "sass-loader"}
         ]
       }, {
@@ -69,7 +73,11 @@ Build started with following configuration:
           "NODE_ENV": JSON.stringify(NODE_ENV)
         }
       }),
-      new MiniCssExtractPlugin()
+      new MiniCssExtractPlugin(),
+      new HtmlWebpackPlugin({
+        filename: "index.html",
+        template: "src/index.html"
+      })
     ]
   }
 };
