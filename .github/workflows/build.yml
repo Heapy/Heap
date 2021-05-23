@@ -12,6 +12,7 @@ jobs:
         with:
           node-version: 14.x
       - run: yarn install --check-cache
+        working-directory: frontend
   build-backend:
     name: "Build Backend Application"
     runs-on: ubuntu-latest
