@@ -3,6 +3,15 @@ on:
   - push
   - pull_request
 jobs:
+  check:
+    if: ${{ github.event_name == 'pull_request' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - run: yarn install --check-cache
   build-backend:
     name: "Build Backend Application"
     runs-on: ubuntu-latest
