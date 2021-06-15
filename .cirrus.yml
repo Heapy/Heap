@@ -1,0 +1,11 @@
+container:
+  image: gradle:jdk11
+
+check_task:
+  gradle_cache:
+    folder: ~/.gradle/caches
+  check_script: ./gradlew check
+  always:
+    junit_artifacts:
+      path: "**/test-results/**/*.xml"
+      format: junit
