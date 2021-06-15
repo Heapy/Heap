@@ -1,4 +1,4 @@
-private const val kotlinVersion = "1.5.0"
+private const val kotlinVersion = "1.5.10"
 
 const val kotlinStdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
 const val kotlinReflect = "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
